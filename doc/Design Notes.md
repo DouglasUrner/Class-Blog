@@ -1,5 +1,27 @@
 # Class Blog Design Notes
 
+## Overview
+
+* Meteor 1.3 (original built around beta.5)
+
+* MongoDB
+
+* React
+
+  With [BlazeToReact][O.1] as glue.
+
+* Bootstrap UI Framework (in the form of [react-bootstrap][O.2])
+
+```sh
+meteor add twbs:bootstrap
+meteor add ian:accounts-ui-bootstrap-3
+npm install --save react-bootstrap
+```
+
+[O.1]: https://atmospherejs.com/thereactivestack/blazetoreact
+[O.2]:
+
+
 ## User Accounts & Authentication
 
 Google configuration at: [Google Developers Console][UAA.1] as the Class Blog project.
@@ -11,7 +33,6 @@ Setup based on the [Adding user accounts][UAA.2] section of the Meteor
 Packages:
 * [accounts-ui][UAA.6]
 * [accounts-google][UAA.7]
-* [thereactivestack:blazetoreact][UAA.5]
 
 ### Roles
 
@@ -27,5 +48,4 @@ Packages:
 [UAA.2]: https://www.meteor.com/tutorials/react/adding-user-accounts
 [UAA.3]: https://www.meteor.com/tutorials/react/creating-an-app
 [UAA.4]: https://themeteorchef.com/recipes/roll-your-own-authentication
-[UAA.5]: https://atmospherejs.com/thereactivestack/blazetoreact
 [UAA.6]:

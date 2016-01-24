@@ -25,3 +25,5 @@ service-configuration
 http
 accounts-ui
 thereactivestack:blazetoreact
+twbs:bootstrap
+ian:accounts-ui-bootstrap-3
