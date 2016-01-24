@@ -1,0 +1,21 @@
+{
+  "name": "class-blog",
+  "description": "A blog designed for classroom use. Implmented in Meteor 1.3 using Mantra guidelines.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DouglasUrner/Class-Blog.git"
+  },
+  "version": "0.0.1",
+  "author": "Douglas Urner <dlu@canishe.com>",
+  "license": "BSD-3-Clause",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-mounter": "^1.0.0"
+  }
+}
