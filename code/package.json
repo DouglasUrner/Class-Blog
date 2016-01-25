@@ -14,9 +14,11 @@
   },
   "keywords": [],
   "dependencies": {
+    "history": "^1.17.0",
     "react": "^0.14.6",
     "react-bootstrap": "^0.28.2",
     "react-dom": "^0.14.6",
-    "react-mounter": "^1.0.0"
+    "react-mounter": "^1.0.0",
+    "react-router": "^1.0.3"
   }
 }

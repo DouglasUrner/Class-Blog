@@ -3,12 +3,12 @@ import React from "react";
 const ReactLoginButtons = BlazeToReact("loginButtons");
 
 // define and export our Layout component
-export const Layout = ({content}) => (
+export const Layout = ({children}) => (
     <div>
         <ReactLoginButtons />
         <h1>MRHS Photo I/II Class Blog</h1>
         <hr />
-        <div>{content}</div>
+        <div>{children}</div>
     </div>
 );
 
@@ -18,3 +18,7 @@ export const Welcome = ({name}) => (
         Hello, {name}.
     </div>
 );
+
+export const Users = () => (
+  <div>Placeholder users page</div>
+)
