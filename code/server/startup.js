@@ -1,7 +1,7 @@
 /*
 ** Meteor.startup()
 **
-** - Configure OAuth 2.
+** - Install default root account if it does not exist.
 */
 Meteor.startup(function() {
 
