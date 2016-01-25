@@ -22,7 +22,7 @@ accounts-password
 accounts-google
 service-configuration
 http
-accounts-ui
 thereactivestack:blazetoreact
 twbs:bootstrap
 alanning:roles
+accounts-ui-unstyled
