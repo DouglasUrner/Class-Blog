@@ -1,14 +1,15 @@
 import React from "react";
 
-const ReactLoginButtons = BlazeToReact("loginButtons");
+import MainNav from "./components/main-nav/index.jsx";
+
 
 // define and export our Layout component
 export const Layout = ({children}) => (
     <div>
-        <ReactLoginButtons />
-        <h1>MRHS Photo I/II Class Blog</h1>
-        <hr />
-        <div>{children}</div>
+      <MainNav/>
+      <h1>MRHS Photo I/II Class Blog</h1>
+      <hr />
+      <div>{children}</div>
     </div>
 );
 
@@ -19,6 +20,14 @@ export const Welcome = ({name}) => (
     </div>
 );
 
+// Placeholders.
+
+export const Exemplars = () => (
+  <div>Placeholder exemplar page</div>
+)
+export const HowTo = () => (
+  <div>Placeholder how to page</div>
+)
 export const Users = () => (
   <div>Placeholder users page</div>
 )
