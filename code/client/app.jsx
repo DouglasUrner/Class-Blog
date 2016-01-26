@@ -1,6 +1,7 @@
 import React from "react";
 
 import MainNav from "./components/main-nav/index.jsx";
+import Users from "./components/user-info/index.jsx";
 
 
 // define and export our Layout component
@@ -28,6 +29,6 @@ export const Exemplars = () => (
 export const HowTo = () => (
   <div>Placeholder how to page</div>
 )
-export const Users = () => (
-  <div>Placeholder users page</div>
+export const UserList = () => (
+  <Users/>
 )

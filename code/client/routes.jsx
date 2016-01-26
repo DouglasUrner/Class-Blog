@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 
 // load Layout and Welcome React components
-import {Exemplars, HowTo, Layout, Users, Welcome} from './app.jsx';
+import {Exemplars, HowTo, Layout, UserList, Welcome} from './app.jsx';
 import {Router, Route, IndexRoute} from 'react-router'
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 
@@ -17,7 +17,7 @@ const routes = <Router history={createBrowserHistory()}>
   // name because Welcome needs an argument.
   }
     <IndexRoute component={() => <Welcome name="The World's Best Father" />} />
-    <Route path='users' component={Users} />
+    <Route path='users' component={UserList} />
     <Route path='how-to' component={HowTo} />
     <Route path='exemplars' component={Exemplars} />
   </Route>
