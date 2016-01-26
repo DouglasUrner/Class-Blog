@@ -37,7 +37,7 @@ const Users = React.createClass({
             <th>Given Name</th>
             <th>E-mail</th>
             <th>Roles</th>
-            <th>Lost Login</th>
+            <th>Last Login</th>
             <th>Active</th>
           </tr>
         </thead>
