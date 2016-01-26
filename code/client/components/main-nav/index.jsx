@@ -55,7 +55,54 @@ const MainNavExemplars = React.createClass({
   }
 });
 
+const MainNavHowTos = React.createClass({
+  // The "How To" tab is generated automatically if they exist in the
+  // database.
+  getHowTos() {
+    return [
+      { _id: 1, title: "Create a blog post", path: "/howto/1" },
+      { _id: 2, title: "Add photographs to a post", path: "/howto/2" },
+      { _id: 3, title: "Comment on a post", path: "/howto/3" },
+    ];
+  },
 
+  renderHowTos() {
+    return this.getHowTos().map((howto) => {
+      return (
+        <HowTo key={howto._id} howto={howto} />
+      );
+    });
+  },
+
+  render() {
+    return (
+      <BS.NavDropdown eventKey={4} title="How To" id="howto-dropdown">
+        {this.renderHowTos()}
+      </BS.NavDropdown>
+    );
+  }
+});
+
+const HowTo = React.createClass({
+  propTypes: {
+    howto: React.PropTypes.object.isRequired,
+  },
+
+  render() {
+    // @ToDo:
+    // - Do we need quotes on to and curley braces around the eventKey?
+    // - Don't know how to code the eventKey, URL from to looks good.
+    // - If we need the event key it should be parameterized (e.g., pass
+    //   around the '4').
+    return (
+      <LinkContainer to={this.props.howto.path}>
+        <BS.MenuItem>
+          {this.props.howto.title}
+        </BS.MenuItem>
+      </LinkContainer>
+    );
+  }
+});
 
 const MainNavAdmin = React.createClass({
   render() {
