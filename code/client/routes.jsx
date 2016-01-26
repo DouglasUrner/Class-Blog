@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from 'react-dom'
-import {mount} from 'react-mounter';
+import {render} from 'react-dom';
+
 // load Layout and Welcome React components
 import {Exemplars, HowTo, Layout, Users, Welcome} from './app.jsx';
 import {Router, Route, IndexRoute} from 'react-router'
