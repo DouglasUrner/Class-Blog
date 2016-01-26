@@ -1,5 +1,6 @@
 import React from "react";
 import * as BS from "react-bootstrap";
+import {LinkContainer} from "react-router-bootstrap";
 
 const ReactLoginButtons = BlazeToReact("loginButtons");
 
@@ -19,7 +20,7 @@ const MainNav = () => (
 
         <BS.Nav>
           <BS.NavItem eventKey={1} href="#">Everyone</BS.NavItem>
-          <BS.NavItem eventKey={2} href="#">Me</BS.NavItem>
+          <BS.NavItem eventKey={2} href="blog">Me</BS.NavItem>
           <BS.NavDropdown eventKey={3} title="Exemplars" id="exemplar-dropdown">
           {/*
           * Ideally this section would be generated automatically if there
@@ -43,7 +44,9 @@ const MainNav = () => (
           * actual content based on the role. E.g., allow teachers to manage
           * students in their classes, but not to alter global settings.
           */}
-            <BS.MenuItem eventKey={5.1} href="users">Manage Students</BS.MenuItem>
+            <LinkContainer to="users">
+              <BS.MenuItem eventKey={5.1}>Manage Students</BS.MenuItem>
+            </LinkContainer>
             <BS.MenuItem eventKey={5.2} href="#">Archive Posts</BS.MenuItem>
             <BS.MenuItem divider />
             <BS.MenuItem eventKey={5.3} hrev="#">Settings</BS.MenuItem>
@@ -57,14 +60,14 @@ const MainNav = () => (
         * be selected automatically based on the blog settings.
         */}
           <BS.NavDropdown eventKey={6} title="Login" id="login-dropdown">
-            <BS.ButtonGroup vertical block>
+            {/*<BS.ButtonGroup vertical block>
               <BS.Button type="submit" bsSize="small" bsStyle="primary" className="login-buttons-google sign-in-text-google">
               HPS Google</BS.Button>
               <BS.Button bsSize="small">Password</BS.Button>
               <BS.MenuItem divider/>
               <BS.Button bsSize="small" bsStyle="danger">Close</BS.Button>
-            </BS.ButtonGroup>
-            {/*<ReactLoginButtons/>*/}
+            </BS.ButtonGroup>*/}
+            <ReactLoginButtons/>
           </BS.NavDropdown>
 
         </BS.Nav>

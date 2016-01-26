@@ -1,29 +1,31 @@
-import React from 'react';
-import {render} from 'react-dom'
-import {mount} from 'react-mounter';
+import React from "react";
+import {render} from "react-dom"
+import {mount} from "react-mounter";
 // load Layout and Welcome React components
-import {Exemplars, HowTo, Layout, Users, Welcome} from './app.jsx';
-import {Router, Route, IndexRoute} from 'react-router'
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import {Exemplars, HowTo, Layout, UserBlog, Users, Welcome} from "./app.jsx";
+import UserInfo from "./components/user-info/index.jsx";
+import {Router, Route, IndexRoute} from "react-router";
+import createBrowserHistory from "history/lib/createBrowserHistory";
 
 const routes = <Router history={createBrowserHistory()}>
 {
 // The components for all routes within this one will be nested within Layout.
 }
-  <Route path='/' component={Layout}>
+  <Route path="/" component={Layout}>
   {
   // IndexRoute sets what the Layout defaults if nothing is passed after the
   // slash. We pass a function (a component) instead of just a component
   // name because Welcome needs an argument.
   }
     <IndexRoute component={() => <Welcome name="The World's Best Father" />} />
-    <Route path='users' component={Users} />
-    <Route path='how-to' component={HowTo} />
-    <Route path='exemplars' component={Exemplars} />
+    <Route path="blog" component={UserBlog} />
+    <Route path="users" component={UserInfo} />
+    <Route path="how-to" component={HowTo} />
+    <Route path="exemplars" component={Exemplars} />
   </Route>
 </Router>
 
-const renderTarget = document.createElement('div');
+const renderTarget = document.createElement("div");
 
 // When the app starts up, put react-router in the body.
 $(() => {
