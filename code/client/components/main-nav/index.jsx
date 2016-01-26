@@ -1,5 +1,5 @@
 import React from "react";
-import * as BS from "react-bootstrap";
+import * as B from "react-bootstrap";
 import {Link} from "react-router";
 import {LinkContainer} from "react-router-bootstrap";
 
@@ -7,34 +7,34 @@ const MainNavLoginButtons = BlazeToReact("loginButtons");
 
 const MainNav = () => (
   <div>
-    <BS.Navbar>
+    <B.Navbar>
 
-      <BS.Navbar.Header>
-        <BS.Navbar.Toggle/>
-        <BS.Navbar.Brand>
+      <B.Navbar.Header>
+        <B.Navbar.Toggle/>
+        <B.Navbar.Brand>
           <Link to="/"><b>MRHS</b> Photo Blog</Link>
-        </BS.Navbar.Brand>
-      </BS.Navbar.Header>
+        </B.Navbar.Brand>
+      </B.Navbar.Header>
 
-      <BS.Navbar.Collapse>
+      <B.Navbar.Collapse>
 
-        <BS.Nav>
+        <B.Nav>
 
-          <BS.NavItem eventKey={1} href="#">Everyone</BS.NavItem>
-          <BS.NavItem eventKey={2} href="#">Me</BS.NavItem>
+          <B.NavItem eventKey={1} href="#">Everyone</B.NavItem>
+          <B.NavItem eventKey={2} href="#">Me</B.NavItem>
 
           <MainNavExemplars/>
           <MainNavHowTos/>
           <MainNavAdmin/>
 
-        </BS.Nav>
+        </B.Nav>
 
-        <BS.Nav pullRight>
+        <B.Nav pullRight>
           <MainNavLoginButtons/>
-        </BS.Nav>
+        </B.Nav>
 
-      </BS.Navbar.Collapse>
-    </BS.Navbar>
+      </B.Navbar.Collapse>
+    </B.Navbar>
   </div>
 );
 
@@ -46,11 +46,11 @@ const MainNavExemplars = React.createClass({
   // items should be generated for each unit as a MenuItem.
   render() {
     return (
-      <BS.NavDropdown eventKey={3} title="Exemplars" id="exemplar-dropdown">
-        <BS.MenuItem eventKey={3.1}  href="exemplars">Unit 1</BS.MenuItem>
-        <BS.MenuItem eventKey={3.2}>Unit 2</BS.MenuItem>
-        <BS.MenuItem eventKey={3.3}>Unit 3</BS.MenuItem>
-      </BS.NavDropdown>
+      <B.NavDropdown eventKey={3} title="Exemplars" id="exemplar-dropdown">
+        <B.MenuItem eventKey={3.1}  href="exemplars">Unit 1</B.MenuItem>
+        <B.MenuItem eventKey={3.2}>Unit 2</B.MenuItem>
+        <B.MenuItem eventKey={3.3}>Unit 3</B.MenuItem>
+      </B.NavDropdown>
     );
   }
 });
@@ -76,9 +76,9 @@ const MainNavHowTos = React.createClass({
 
   render() {
     return (
-      <BS.NavDropdown eventKey={4} title="How To" id="howto-dropdown">
+      <B.NavDropdown eventKey={4} title="How To" id="howto-dropdown">
         {this.renderHowTos()}
-      </BS.NavDropdown>
+      </B.NavDropdown>
     );
   }
 });
@@ -96,9 +96,9 @@ const HowTo = React.createClass({
     //   around the '4').
     return (
       <LinkContainer to={this.props.howto.path}>
-        <BS.MenuItem>
+        <B.MenuItem>
           {this.props.howto.title}
-        </BS.MenuItem>
+        </B.MenuItem>
       </LinkContainer>
     );
   }
@@ -108,18 +108,18 @@ const MainNavAdmin = React.createClass({
   render() {
     if (true) {
       return (
-        <BS.NavDropdown eventKey={5} title="Admin" id="admin-dropdown">
+        <B.NavDropdown eventKey={5} title="Admin" id="admin-dropdown">
           <LinkContainer to="users">
-            <BS.MenuItem eventKey={5.1}>Manage Students</BS.MenuItem>
+            <B.MenuItem eventKey={5.1}>Manage Students</B.MenuItem>
           </LinkContainer>
           <LinkContainer to="#">
-            <BS.MenuItem eventKey={5.2}>Archive Posts</BS.MenuItem>
+            <B.MenuItem eventKey={5.2}>Archive Posts</B.MenuItem>
           </LinkContainer>
-          <BS.MenuItem divider />
+          <B.MenuItem divider />
           <LinkContainer to="#">
-            <BS.MenuItem eventKey={5.3}>Settings</BS.MenuItem>
+            <B.MenuItem eventKey={5.3}>Settings</B.MenuItem>
           </LinkContainer>
-        </BS.NavDropdown>
+        </B.NavDropdown>
       );
     } else {
       return null;
