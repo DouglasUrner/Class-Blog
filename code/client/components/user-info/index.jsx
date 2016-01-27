@@ -12,14 +12,12 @@ import {LinkContainer} from "react-router-bootstrap";
 const Users = React.createClass({
 
   getUsers() {
-    //console.log(Meteor.users.find())
     return (
       Meteor.users.find()
     );
   },
 
   renderUsers() {
-    //console.log(this.getUsers())
     return this.getUsers().map((user) => {
       //console.log(user);
       return (
@@ -42,7 +40,7 @@ const Users = React.createClass({
           </tr>
         </thead>
         <tbody>
-        {this.renderUsers()}
+          {this.renderUsers()}
         </tbody>
       </table>
     );
@@ -55,26 +53,53 @@ const User = React.createClass({
   },
 
   render() {
+    let email = "";
+    let fn = "";
+    let gn = "";
+    if (typeof this.props.user.services.google !== 'undefined') {
+      let google = this.props.user.services.google;
+      console.log(google);
+      email = google.email;
+      fn = google.family_name;
+      gn = google.given_name;
+    } else {
+      // Password account.
+      let profile = this.props.user.profile;
+      if (profile.family_name) {fn = profile.family_name;}
+      if (profile.given_name) {gn = profile.given_name;}
+      if (typeof this.props.user.emails !== 'undefined') {
+        email = this.props.user.emails[0].address;
+      }
+    }
+    let mailto = "\"mailto:" + email + "\"";
+
+    let roles = "";
+    if (typeof this.props.user.roles !== 'undefined') {
+      roles = this.props.user.roles.toString();
+    }
+
+    let active = "";
+    if (typeof this.props.user.status !== 'undefined') {
+      let status = this.props.user.status;
+      active = (status.active === true) ? "Y" : "N";
+    }
+
     return (
-      <LinkContainer to={this.props.user.profile.name}>
-        <tr>
-          <td>
-          {this.props.user.services.google.family_name}
-          </td>
-          <td>
-          {this.props.user.services.google.given_name}
-          </td>
-          <td>
-          {this.props.user.services.google.email}
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-        </tr>
-      </LinkContainer>
+      <tr>
+        <td>{fn}</td>
+        <td>{gn}</td>
+        <td>
+          <Link to={mailto}>{email}</Link>
+        </td>
+        <td>
+          {roles}
+        </td>
+        <td>
+        </td>
+        <td>
+          {active}
+        </td>
+      </tr>
     );
   }
 });
