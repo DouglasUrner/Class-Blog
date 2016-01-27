@@ -1,6 +1,7 @@
 /*
 ** Server side user account functions.
 */
+const logger = Meteor.npmRequire("winston");
 
 Accounts.validateNewUser( function(user) {
   // Check that user is logging in with an approved account.
@@ -41,20 +42,21 @@ Accounts.onCreateUser( function(options, user) {
     active: true,   // Allowed to login.
   }
 
-  console.log(user);
+  logger.info("Added user:", user);
+
+  //console.log(user);
   return user;
 });
 
 Accounts.validateLoginAttempt( function(info) {
   if (typeof info.user.status === 'undefined') {
-    console.log(info);
+    logger.info("info.user.status === 'undefined'", info);
   } else {
     let status = info.user.status;
     if (status.active === true) {
       return true;
     } else {
-      console.log("login denied status.active !== true");
-      console.log(info);
+      logger.info("login denied status.active !== true", info);
       return false;
     }
   }
@@ -64,3 +66,12 @@ Accounts.validateLoginAttempt( function(info) {
   // console.log(info);
   // return true;
 });
+
+Accounts.onLogin( function(info) {
+  //console.log(info);
+  logger.info("Login:", info.user.profile.name);
+})
+
+// Accounts.onLogout( function(info) {
+//   logger.info("Logout:", info.user.profile.name);
+// })
