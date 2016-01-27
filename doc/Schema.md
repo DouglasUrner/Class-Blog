@@ -1,12 +1,12 @@
 * Post
   - ID
-  - Author: user
+  - Author: user // Original creator
   - Body[]
   - Comments[]
   - Published: enum // {public, private, draft}
 
 * Body
-  - Revision[]
+  - Revisions[]
   - Marks[]
 
 * Revision
@@ -15,6 +15,7 @@
   - Date: time
   - Title: string
   - Content (target of WYSIWYG editor)
+  - Author: user  // Who made this change.
 
 * Mark
   - ID (link to Post (or comment?))
