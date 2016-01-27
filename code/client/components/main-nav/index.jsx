@@ -106,7 +106,8 @@ const HowTo = React.createClass({
 
 const MainNavAdmin = React.createClass({
   render() {
-    if (true) {
+    if (Roles.userIsInRole(Meteor.userId(), 'admin' ||
+        Roles.userIsInRole(Meteor.userId(), 'teacher'))) {
       return (
         <B.NavDropdown eventKey={5} title="Admin" id="admin-dropdown">
           <LinkContainer to="users">
